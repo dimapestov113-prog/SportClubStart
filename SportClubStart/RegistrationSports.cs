@@ -43,11 +43,42 @@ namespace SportClubStart
                     Phonesm.Clear();
                     BDsm.Value = DateTime.Now;
 
-                    MessageBox.Show("Спортсмен успешно добавлен");
+                    MessageBox.Show("С" +
+                        "п" +
+                        "о" +
+                        "р" +
+                        "т" +
+                        "с" +
+                        "м" +
+                        "е" +
+                        "н" +
+                        " " +
+                        "у" +
+                        "с" +
+                        "п" +
+                        "е" +
+                        "ш" +
+                        "н" +
+                        "о" +
+                        " " +
+                        "д" +
+                        "о" +
+                        "б" +
+                        "а" +
+                        "в" +
+                        "л" +
+                        "е" +
+                        "н");
                 }
                 catch
                 {
-                    MessageBox.Show("BALBES");
+                    MessageBox.Show("B" +
+                        "A" +
+                        "L" +
+                        "B" +
+                        "E" +
+                        "S" +
+                        "");
                 }
             }
             else

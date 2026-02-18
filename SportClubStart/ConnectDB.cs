@@ -6,14 +6,19 @@ using static SportClubStart.Models.DB;
 
 namespace SportClubStart
 {
-    internal class ConnectDB:DbContext
+    internal class ConnectDB : DbContext
     {
         public DbSet<Attendances> Attendances { get; set; }
         public DbSet<Coaches> Coaches { get; set; }
         public DbSet<Sportsmen> Sportsmen { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)//СОЗДАЕМ БД ЕПТаЫФАДФВЫАЛХЫЫЫЫЫЫыы
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data source = DataBase.db");
+            var dbPath = Path.GetFullPath(
+                Path.Combine(AppContext.BaseDirectory, @"..\..\..\DataBase.db")
+            );
+
+            optionsBuilder.UseSqlite($"Data Source={dbPath}");
         }
     }
 }

@@ -16,7 +16,7 @@ namespace SportClubStart.Models
             public int SportsmanId { get; set; }
             public int CoachId { get; set; }
             public DateTime TrainingDate { get; set; }
-            public bool Attended { get; set; } //1 был 0 нет(придурок)
+            public bool Attended { get; set; } //1 был 0 нет()))))))))))))
         }
 
         public class Sportsmen
