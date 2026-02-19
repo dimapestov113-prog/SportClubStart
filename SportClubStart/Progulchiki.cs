@@ -38,12 +38,12 @@ namespace SportClubStart
 
         }
 
-        public void LoadProgulshiki()
+        public void LoadProgulshiki()//загрузка прогульщиков
         {
             DGVprog.Rows.Clear();
 
             DateTime dateStart = dateTimePicker1.Value.Date;
-            DateTime dateEnd = dateTimePicker2.Value.Date;
+            DateTime dateEnd = dateTimePicker2.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59);//допустим от ДРДРДР))))25.11.2005 00:00:00 до 25.11.2005 23:59:59
 
             using var db = new ConnectDB();
 

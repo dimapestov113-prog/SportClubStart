@@ -9,7 +9,7 @@ namespace SportClubStart.Models
 {
     internal class DB
     {
-        public class Attendances
+        public class Attendances//посещение
         {
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public int Id { get; set; }
@@ -19,7 +19,7 @@ namespace SportClubStart.Models
             public bool Attended { get; set; } //1 был 0 нет()))))))))))))
         }
 
-        public class Sportsmen
+        public class Sportsmen//СПОРТСМЕЕЕНСссс
         {
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public int Id { get; set; }
@@ -29,7 +29,7 @@ namespace SportClubStart.Models
             public string ParentPhone { get; set; }
         }
 
-        public class Coaches
+        public class Coaches//КОАЧЕРССС
         {
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public int Id { get; set; }

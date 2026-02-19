@@ -20,11 +20,11 @@ namespace SportClubStart
             db.Database.EnsureCreated();
         }
 
-        private void BTNadd_Click(object sender, EventArgs e)//спортсмены
+        private void BtnAddSportsmen_Click(object sender, EventArgs e)//спортсмены
         {
-            var Name = FIOsm.Text;
-            var Phone = Phonesm.Text;
-            var BD = Convert.ToDateTime(BDsm.Text);
+            var Name = FioSm.Text;
+            var Phone = PhoneSm.Text;
+            var BD = Convert.ToDateTime(BdSm.Text);
             if (Name.Length != 0 & Phone.Length != 0 & BD.Year != 0)
             {
                 try
@@ -39,46 +39,15 @@ namespace SportClubStart
                     db.Sportsmen.Add(Sportsmen);
                     db.SaveChanges();
 
-                    FIOsm.Clear();
-                    Phonesm.Clear();
-                    BDsm.Value = DateTime.Now;
+                    FioSm.Clear();
+                    PhoneSm.Clear();
+                    BdSm.Value = DateTime.Now;
 
-                    MessageBox.Show("С" +
-                        "п" +
-                        "о" +
-                        "р" +
-                        "т" +
-                        "с" +
-                        "м" +
-                        "е" +
-                        "н" +
-                        " " +
-                        "у" +
-                        "с" +
-                        "п" +
-                        "е" +
-                        "ш" +
-                        "н" +
-                        "о" +
-                        " " +
-                        "д" +
-                        "о" +
-                        "б" +
-                        "а" +
-                        "в" +
-                        "л" +
-                        "е" +
-                        "н");
+                    MessageBox.Show("Спортсмен добавлен");
                 }
                 catch
                 {
-                    MessageBox.Show("B" +
-                        "A" +
-                        "L" +
-                        "B" +
-                        "E" +
-                        "S" +
-                        "");
+                    MessageBox.Show("незя(");
                 }
             }
             else
@@ -87,10 +56,10 @@ namespace SportClubStart
             }
         }
 
-        private void BTNaddTR_Click(object sender, EventArgs e)
+        private void BtnAddTr_Click(object sender, EventArgs e)//добавление
         {
-            var FullName = FIOtr.Text;
-            var SportType = Combotr.Text;
+            var FullName = FioTr.Text;
+            var SportType = ComboTr.Text;
             if (FullName.Length != 0 &  SportType.Length != 0)
                 try
                 {
@@ -103,8 +72,8 @@ namespace SportClubStart
                     db.Coaches.Add(Coaches);
                     db.SaveChanges();
 
-                    FIOtr.Clear();
-                    Combotr.SelectedIndex =-1;
+                    FioTr.Clear();
+                    ComboTr.SelectedIndex =-1;
 
                     MessageBox.Show("Тренер успешно добавлен");
                 }
@@ -118,13 +87,4 @@ namespace SportClubStart
             }
         }
     }
-}
-//FIOsm фио
-//BDsm др
-//Phonesm телефон мамы(
-//BTNadd добавить спортсмена
-//BTNcn отмена
-
-//BTNaddTR добавить тренера
-//FIOtr ФИО
-//Combotr выбор вида спорта
+}//поменял названия

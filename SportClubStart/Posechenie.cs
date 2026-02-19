@@ -28,7 +28,7 @@ namespace SportClubStart
             db.Database.EnsureCreated();
         }
 
-        public void SetUp()
+        public void SetUp()//настройка дгв 1 и 2
         {
             dataGridView1.Columns.Add("Coach", "Тренер");
             dataGridView1.Columns.Add("SportType", "Занятие");
@@ -47,7 +47,7 @@ namespace SportClubStart
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-
+        //обновление данных при изменении времени
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
             LoadAktivnostDety();
@@ -57,10 +57,10 @@ namespace SportClubStart
         {
             LoadAktivnostDety();
         }
-        public void LoadAktivnostDety()
+        public void LoadAktivnostDety()//завгрузка активности
         {
             DateTime datestart = dateTimePicker4.Value.Date;
-            DateTime dateend = dateTimePicker3.Value.Date;
+            DateTime dateend = dateTimePicker3.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59);//допустим от ДРДРДР))))25.11.2005 00:00:00 до 25.11.2005 23:59:59
             dataGridView2.Rows.Clear();
 
             DateTime today = DateTime.Today;
@@ -123,7 +123,7 @@ namespace SportClubStart
             dataGridView1.Rows.Clear();
 
             DateTime datestart = dateTimePicker1.Value.Date;
-            DateTime dateend = dateTimePicker2.Value.Date;
+            DateTime dateend = dateTimePicker2.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59);//допустим от ДРДРДР))))25.11.2005 00:00:00 до 25.11.2005 23:59:59
 
             using var db = new ConnectDB();
             var coaches = db.Coaches.ToList();
@@ -178,7 +178,7 @@ namespace SportClubStart
             LoadStatistica();
         }
 
-        public void LoadComboBox()
+        public void LoadComboBox()//прогрузка комбо боксов
         {
             using var db = new ConnectDB();
             var coaches = db.Coaches
@@ -194,7 +194,7 @@ namespace SportClubStart
             Cbtr.ValueMember = "Id";
         }
 
-        public void LoadSportsmenList()
+        public void LoadSportsmenList()// загрузка спортсменов
         {
             using var db = new ConnectDB();
             var sportsmen = db.Sportsmen
@@ -210,7 +210,7 @@ namespace SportClubStart
             CBLsm.ValueMember = "Id";
         }
 
-        private void AddZ_Click(object sender, EventArgs e)
+        private void AddZ_Click(object sender, EventArgs e)//отметить посещение
         {
             try
             {

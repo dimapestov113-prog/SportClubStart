@@ -12,7 +12,7 @@ namespace SportClubStart
         public DbSet<Coaches> Coaches { get; set; }
         public DbSet<Sportsmen> Sportsmen { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)// подключение и автосоздание бд
         {
             var dbPath = Path.GetFullPath(
                 Path.Combine(AppContext.BaseDirectory, @"..\..\..\DataBase.db")

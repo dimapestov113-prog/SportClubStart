@@ -31,6 +31,7 @@
             BtnAdd = new Button();
             BtnOtm = new Button();
             Otchet = new Button();
+            OpenUsers = new Button();
             SuspendLayout();
             // 
             // BtnAdd
@@ -66,12 +67,23 @@
             Otchet.UseVisualStyleBackColor = false;
             Otchet.Click += Otchet_Click;
             // 
+            // OpenUsers
+            // 
+            OpenUsers.Location = new Point(12, 81);
+            OpenUsers.Name = "OpenUsers";
+            OpenUsers.Size = new Size(376, 29);
+            OpenUsers.TabIndex = 3;
+            OpenUsers.Text = "Тренера и спортсмены";
+            OpenUsers.UseVisualStyleBackColor = true;
+            OpenUsers.Click += OpenCoachers_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(400, 85);
+            ClientSize = new Size(400, 115);
             ControlBox = false;
+            Controls.Add(OpenUsers);
             Controls.Add(Otchet);
             Controls.Add(BtnOtm);
             Controls.Add(BtnAdd);
@@ -86,5 +98,6 @@
         private Button BtnAdd;
         private Button BtnOtm;
         private Button Otchet;
+        private Button OpenUsers;
     }
 }
